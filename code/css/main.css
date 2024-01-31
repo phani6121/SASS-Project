@@ -10,7 +10,7 @@
   overflow: hidden;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/model-1.jpg") center top;
+  background-image: url("/dist/img/model-1.jpg");
   background-size: cover;
 }
 .home_name {
@@ -61,14 +61,14 @@
   background: #fff;
   transition: all 0.5s ease-in-out;
 }
-.menu-btn_burger.open {
+.menu-btn .open {
   transform: rotate(720deg);
   background: transparent;
 }
-.menu-btn_burger.open::before {
+.menu-btn .open::before {
   transform: rotate(45deg) translate(5px, 8px);
 }
-.menu-btn_burger.open::after {
+.menu-btn .open::after {
   width: 28px;
   transform: rotate(-45deg) translate(3px, -7px);
 }
@@ -76,13 +76,9 @@
 .nav {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vh;
   opacity: 0.98;
-  visibility: hidden;
-}
-.nav.open {
-  visibility: hidden;
 }
 .nav .menu-nav {
   display: flex;
@@ -138,6 +134,188 @@
   transition-delay: 0.55s;
 }
 
+.about {
+  padding-bottom: 2rem;
+}
+.about_bio-image {
+  height: 90vh;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("/dist/img/model-1.jpg") center top;
+}
+.about_bio-image p {
+  margin-bottom: 2rem;
+}
+.about_bio {
+  width: 80%;
+  align-items: center;
+}
+.about_bio .text-secondary {
+  padding-bottom: 1rem;
+}
+.about .jobs {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.about .jobs_job {
+  background: green;
+  padding: 0.5rem;
+  border-bottom: 5px solid #272727;
+}
+.about .jobs_job h2,
+.about .jobs_job h3 {
+  margin: 0.5rem 0;
+}
+.about .jobs_job h6 {
+  margin: 0.3rem 0;
+}
+.about .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.about footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.projects {
+  padding-bottom: 2rem;
+}
+.projects_bio-image {
+  height: 30vh;
+  width: 100%;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("/dist/img/model-1.jpg") center top;
+  background-size: cover;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.projects_bio-image .text-secondary {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.projects_items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+.projects_item {
+  position: relative;
+  border-bottom: 5px solid #ff652f;
+  overflow: hidden;
+  cursor: pointer;
+}
+.projects_item img {
+  width: 100%;
+}
+.projects_item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #ff652f;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+.projects_item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+.projects .social-icons {
+  display: flex;
+  flex-direction: column;
+}
+.projects footer {
+  transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.contact {
+  height: 100%;
+  padding: 40vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("/dist/img/model-1.jpg") center top;
+  background-size: cover;
+}
+.contact h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.contact_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  font-size: 1.5rem;
+}
+.contact .social-icons {
+  position: initial;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    visibility: hidden;
+  }
+  .nav {
+    visibility: visible;
+  }
+  .nav .menu-nav {
+    display: block;
+    transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    text-align: right;
+  }
+  .nav .menu-nav_item {
+    display: inline;
+    padding-right: 1rem;
+  }
+  .nav .menu-nav_link {
+    font-size: 1rem;
+  }
+  .about_bio {
+    font-size: 1.5rem;
+  }
+  .projects_bio-image {
+    height: 40vh;
+  }
+  .projects_items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .text-secondary {
+    font-size: 3rem;
+  }
+  .contact_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .projects_items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .contact_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .projects_bio-image {
+    height: 50vh;
+  }
+}
 body {
   background: #272727;
   color: #fff;

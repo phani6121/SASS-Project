@@ -8,7 +8,8 @@
             linear-gradient(to right,
                 rgba($primary-color, 0.9),
                 rgba($primary-color, 0.3)),
-            url('../img/model-1.jpg') center top;
+            url('/dist/img/model-1.jpg') center top;
+        background-size: cover;
         background-size: cover;
         display: flex;
         flex-direction: column;

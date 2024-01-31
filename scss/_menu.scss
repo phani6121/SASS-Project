@@ -37,18 +37,20 @@
             @include transition-ease;
         }
 
-        &.open {
-            transform: rotate(720deg);
-            background: transparent;
 
-            &::before {
-                transform: rotate(45deg) translate(5px, 8px);
-            }
+    }
 
-            &::after {
-                width: 28px;
-                transform: rotate(-45deg) translate(3px, -7px);
-            }
+    .open {
+        transform: rotate(720deg);
+        background: transparent;
+
+        &::before {
+            transform: rotate(45deg) translate(5px, 8px);
+        }
+
+        &::after {
+            width: 28px;
+            transform: rotate(-45deg) translate(3px, -7px);
         }
     }
 }
@@ -56,13 +58,13 @@
 .nav {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100vh;
     opacity: 0.98;
-    visibility: hidden;
+    // visibility: hidden;
 
     &.open {
-        visibility: hidden;
+        // visibility: hidden;
     }
 
     .menu-nav {
